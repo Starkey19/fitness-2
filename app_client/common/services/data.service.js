@@ -15,6 +15,11 @@
       });
     };
 
+//TODO
+    var getActivities = function () {
+
+    }
+
     return {
       getProfile : getProfile
     };

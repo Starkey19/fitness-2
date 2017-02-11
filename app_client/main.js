@@ -29,14 +29,20 @@
         controller: 'activityCtrl',
         controllerAs: 'vm'
       })
+      .when('/activity/new', {
+        templateUrl: '/activity/newActivity.view.html',
+        controller: 'newActivityCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
 
     // use the HTML5 History API
     $locationProvider.html5Mode(true);
   }
 
+//Redirect to home if user isn't logged in
   function run($rootScope, $location, authentication) {
-    $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
       if ($location.path() === '/profile' && !authentication.isLoggedIn()) {
         $location.path('/');
       }

@@ -19,7 +19,7 @@ var userSchema = new mongoose.Schema({
   },
   hash: String,
   salt: String,
-  activities: { //Array of activity Object IDs
+  activities: { //Array of activity ID
       type: [mongoose.Schema.Types.ObjectID],
       default: []
   }

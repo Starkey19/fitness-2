@@ -31,6 +31,7 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 
 //activities
 router.get('/activities', auth, ctrlActivities.activitiesRead);
+router.post('/activities/new', ctrlActivities.createActivity);
 
 // authentication
 router.post('/register', ctrlAuth.register);
