@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
+//New strategy with userNameField as Email:
 passport.use(new LocalStrategy({
     usernameField: 'email'
   },

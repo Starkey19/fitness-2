@@ -23,14 +23,14 @@ var auth = jwt({
 var ctrlProfile = require('../controllers/profile');
 var ctrlAuth = require('../controllers/authentication');
 
-//var ctrlActivities = require('../controllers/activities');
+var ctrlActivities = require('../controllers/activities');
 
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
 
 //activities
-//router.get('/activities', auth, ctrlActivities.activitiesRead);
+router.get('/activities', auth, ctrlActivities.activitiesRead);
 
 // authentication
 router.post('/register', ctrlAuth.register);

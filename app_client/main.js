@@ -24,6 +24,11 @@
         controller: 'profileCtrl',
         controllerAs: 'vm'
       })
+      .when('/activity', {
+        templateUrl: '/activity/activity.view.html',
+        controller: 'activityCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
 
     // use the HTML5 History API
@@ -37,7 +42,7 @@
       }
     });
   }
-  
+
   angular
     .module('meanApp')
     .config(['$routeProvider', '$locationProvider', config])
