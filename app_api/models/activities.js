@@ -5,9 +5,12 @@ fs = require("fs")
 var fileName = "../secret-config.json";
 var secretConfig;
 
+var possibleTypes = ['run', 'hike', 'swim', 'bike ride' ];
+
 var activitySchema = new mongoose.Schema({
   activityType: {
-    type: String,
+    type: [{type: String, enum: possibleTypes}],  //String,
+    default: ['run'] ,
     required: true
   },
   name: {

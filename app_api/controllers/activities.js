@@ -14,7 +14,7 @@ activity.owner = req.body.owner;
 activity.save(function(err) {
   if (err) return res.json(err);
   });
-}
+};
 
 module.exports.activitiesRead = function(req, res) {
 

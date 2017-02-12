@@ -40,11 +40,15 @@
     $locationProvider.html5Mode(true);
   }
 
-//Redirect to home if user isn't logged in
+//Redirect to home if user isn't logged in, redirect to profile if logged in
+//or trying to register
   function run($rootScope, $location, authentication) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
       if ($location.path() === '/profile' && !authentication.isLoggedIn()) {
         $location.path('/');
+      } else if ($location.path() === '/login' && authentication.isLoggedIn()||
+                $location.path() === '/register' && authentication.isLoggedIn()) {
+          $location.path('/profile');
       }
     });
   }

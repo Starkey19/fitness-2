@@ -30,8 +30,10 @@ var ctrlActivities = require('../controllers/activities');
 router.get('/profile', auth, ctrlProfile.profileRead);
 
 //activities
-router.get('/activities', auth, ctrlActivities.activitiesRead);
-router.post('/activities/new', ctrlActivities.createActivity);
+router.get('/activity', auth, ctrlActivities.activitiesRead);
+router.post('/activity/new', ctrlActivities.createActivity);
+
+///
 
 // authentication
 router.post('/register', ctrlAuth.register);
