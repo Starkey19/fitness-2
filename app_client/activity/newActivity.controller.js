@@ -1,22 +1,34 @@
-(function() {
+(function () {
 
   angular
     .module('meanApp')
     .controller('newActivityCtrl', newActivityCtrl);
 
-  newActivityCtrl.$inject = ['$location', 'meanData'];
-  function newActivityCtrl($location, meanData) {
+  newActivityCtrl.$inject = ['$scope', '$location', 'authentication'];
+  function newActivityCtrl($scope, $location, authentication) {
     var vm = this;
 
-    vm.user = {};
+     vm.activity = {
+       type : "",
+       name : "",
+       owner: authentication.currentUser(), //Owner.Email, Owner.Name
+       file : {}
+     };
 
-    meanData.getProfile()
-      .success(function(data) {
-        vm.user = data;
-      })
-      .error(function (e) {
-        console.log(e);
-      });
+     console.log(vm.activity);
+
+
+    vm.onSubmit = function () {
+      console.log('Uploading activity');
+      activities
+        .createActivity(vm.activity)
+        .error(function(err){
+          alert(err);
+        })
+        .then(function(){
+          $location.path('activity');
+        });
+    };
   }
 
 })();

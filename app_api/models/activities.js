@@ -1,10 +1,7 @@
-var mongoose = require( 'mongoose' );
+var mongoose = require('mongoose');
+var loc = mongoose.model('Location'); //Location model
 
-//config for secret file
-fs = require("fs")
-var fileName = "../secret-config.json";
-var secretConfig;
-
+//Enums for possible type of activity
 var possibleTypes = ['run', 'hike', 'swim', 'bike ride' ];
 
 var activitySchema = new mongoose.Schema({
@@ -18,7 +15,13 @@ var activitySchema = new mongoose.Schema({
     required: true
   },
   owner: { //ID of user who created this activity
-    type : mongoose.Schema.Types.ObjectId
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  location: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref : 'Location',
+    default: []
   }
 });
 

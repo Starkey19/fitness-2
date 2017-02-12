@@ -14,12 +14,10 @@
           <label for="name">Activity name:</label>
           <input type="text" class="form-control" id="name" placeholder="e.g forest hike" ng-model="vm.activity.name">
         </div>
-        <!-- <div class="form-group">
-          <label for="">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
-        </div> -->
-
-        <!-- TODO: UPLOADING -->
+        <div>
+          <label for="file">File:</label>
+          <input type="file" name="file" id="file" ng-model="vm.activity.file" ngf-select ngf-max-size="50MB" required/>
+        </div>
         <button type="submit" class="btn btn-default">Create!</button>
       </form>
     </div>

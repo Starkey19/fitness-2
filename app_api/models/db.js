@@ -46,4 +46,5 @@ process.on('SIGTERM', function() {
 });
 //Require the schemas and models
 require('./users');
+require('./location');
 require('./activities');

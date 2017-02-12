@@ -21,6 +21,7 @@ var userSchema = new mongoose.Schema({
   salt: String,
   activities: { //Array of activity ID
       type: [mongoose.Schema.Types.ObjectID],
+      ref : 'Activity',
       default: []
   }
 });
