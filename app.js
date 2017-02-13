@@ -22,6 +22,7 @@ require('./app_api/config/passport');
 
 // [SH] Bring in the routes for the API (delete the default routes)
 var routesApi = require('./app_api/routes/index');
+var uploadRoutesApi = require('./app_api/routes/uploads');
 
 var app = express();
 
@@ -44,6 +45,8 @@ app.use(passport.initialize());
 
 // [SH] Use the API routes when path starts with /api
 app.use('/api', routesApi);
+// Use the /api/uploads route
+app.use('/api/uploads', uploadRoutesApi);
 
 // [SH] Otherwise render the index.html page for the Angular SPA
 // [SH] This means we don't have to map all of the SPA routes in Express

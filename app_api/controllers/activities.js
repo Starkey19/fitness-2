@@ -6,11 +6,16 @@ var toGeoJSON = require('toGeoJSON');
 var jsdom = require('jsdom').jsdom;
 var fs = require('fs');
 var multer = require('multer');
-var uploadLoc = multer({ dest: 'uploads/' }).single('file');//TODO
+//var uploadLoc = multer({ dest: 'uploads/' }).single('file');//TODO
 
 //Create a new activity from /activity/new route after uploading a gpx file and converting to geoJSON
 module.exports.createActivity = function(req, res) {
-//TODO: check if req.body.file is file
+
+//Check for a file in req.file
+console.log("Activities.js - Create activity");
+console.log(req.body);
+console.log("file:" + req.file);
+
 var file = req.body.file;
 if (file) {
     fs.readFile(file.path)
@@ -25,8 +30,8 @@ activity.name = req.body.name;
 activity.owner = req.body.owner._id;
 //Convert req.body.file to GeoJSON and store in activity.location
 
-
-activity.location =
+console.log(activity);
+//activity.location =
 
 activity.save(function(err) {
   if (err) return res.json(err);

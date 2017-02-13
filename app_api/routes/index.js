@@ -32,7 +32,8 @@ router.get('/profile', auth, ctrlProfile.profileRead);
 
 //activities
 router.get('/activity', auth, ctrlActivities.activitiesRead);
-router.post('/activity/new', multer({ dest: 'uploads/' }).single('file')
+
+router.post('/activity/new', multer({ dest: './uploads/' }).single('file')
 , ctrlActivities.createActivity);
 
 ///

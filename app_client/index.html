@@ -9,10 +9,15 @@
 <body ng-view>
 
   <!-- include angular and main.js -->
+
+
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-route.min.js"></script>
-  <script src="main.js"></script>
 
+  <!-- <script src="lib/upload/ng-file-upload-shim.min.js"></script>
+  <script src="lib/upload/ng-file-upload.min.js"></script> -->
+  <script src="main.js"></script>
+  <script src="lib/upload/ng-file-upload.js"></script>
   <!-- Pages -->
   <script src="home/home.controller.js"></script>
   <script src="profile/profile.controller.js"></script>
@@ -26,9 +31,11 @@
 
   <script src="common/services/authentication.service.js"></script>
   <script src="common/services/data.service.js"></script>
+  <script src="common/services/activity.service.js"></script>
 
   <script src="common/directives/navigation/navigation.directive.js"></script>
   <script src="common/directives/navigation/navigation.controller.js"></script>
+
 
 
 

@@ -48,3 +48,4 @@ process.on('SIGTERM', function() {
 require('./users');
 require('./location');
 require('./activities');
+require('./uploads');

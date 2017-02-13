@@ -1,25 +1,68 @@
 <navigation></navigation>
+<!-- /*<style>
+form .progress {
+    line-height: 15px;
+}
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+form .progress {
+    line-height: 15px;
+}
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+</style>*/ -->
 
 <div class="container">
 
   <div class="row">
     <div class="col-md-6">
       <h1>Create/Upload a new activity</h1>
-      <form ng-submit="vm.onSubmit()">
+      <form ng-submit="submit()">
         <div class="form-group">
           <label for="activityType">Activity type:</label>
-          <input type="text" class="form-control" id="activityType" placeholder="e.g Run/Bike ride/Swim/Hike" ng-model="vm.activity.type">
+          <input type="text" class="form-control" id="activityType" placeholder="e.g Run/Bike ride/Swim/Hike" ng-model="upload.type">
         </div>
         <div class="form-group">
           <label for="name">Activity name:</label>
-          <input type="text" class="form-control" id="name" placeholder="e.g forest hike" ng-model="vm.activity.name">
+          <input type="text" class="form-control" id="name" placeholder="e.g forest hike" ng-model="upload.name">
         </div>
         <div>
           <label for="file">File:</label>
-          <input type="file" name="file" id="file" ng-model="vm.activity.file" ngf-select ngf-max-size="50MB" required/>
+          <input type="file" name="file" id="file" ng-model="upload.file" ngf-select ngf-max-size="50MB" required/>
         </div>
         <button type="submit" class="btn btn-default">Create!</button>
+        <!-- TODO PROGRESS AND ERROR HANDLING -->
       </form>
+
+      <h2>All uploads are here:</h2>
+     <ul>
+       <li ng-repeat="upload in uploads">
+         <p>{{upload.name}}</p>
+         <a ng-href='{{upload.file.path + "/" + upload.file.originalname}}'>{{upload.file.originalname}}</a>
+       </li>
+     </ul>
     </div>
   </div>
 
