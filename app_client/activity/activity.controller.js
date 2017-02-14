@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .controller('activityCtrl', activityCtrl);
 
   activityCtrl.$inject = ['$location', 'meanData'];

@@ -1,6 +1,6 @@
 (function () {
   angular
-    .module('meanApp')
+    .module('fitness')
     .controller('newActivityCtrl', newActivityCtrl);
 
   newActivityCtrl.$inject = ['$http', '$scope', 'Upload', '$timeout', '$location', 'authentication', 'activities'];
@@ -13,6 +13,8 @@
     });
 
     $scope.submit = function(){
+      //Set the owner of the upload so we can add it their activities
+      $scope.upload.owner = authentication.currentUser().email;
       Upload.upload({
         url: '/api/uploads',
         method: 'post',
@@ -23,47 +25,6 @@
         $scope.upload = {};
       })
     }
-
-    // $scope.uploadFile = function(file) {
-    //   file.upload = Upload.upload({
-    //     url: 'uploads/', //POST TO API ROUTE
-    //     data: {file: file}
-    //   });
-    //
-    //   file.upload.then(function (response) {
-    //     $timeout(function () {
-    //       file.result = response.data;
-    //     });
-    //
-    //   }, function (response) {
-    //     if (response.status > 0)
-    //     $scope.errorMsg = response.status + ': ' + response.data;
-    //   }, function (evt) {
-    //     file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-    //   });
-    // }
-
-    //  vm.activity = {
-    //    type : "",
-    //    name : "",
-    //    owner: authentication.currentUser(), //Owner.Email, Owner.Name
-    //    file : {}
-    //  };
-    //
-    //  console.log(vm.activity);
-    //
-    //
-    // vm.onSubmit = function () {
-    //   console.log('Uploading activity');
-    //   activities
-    //     .createActivity(vm.activity)
-    //     .error(function(err){
-    //       alert(err);
-    //     })
-    //     .then(function(){
-    //       $location.path('activity');
-    //     });
-    // };
   }
 
 })();

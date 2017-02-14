@@ -60,7 +60,7 @@ form .progress {
      <ul>
        <li ng-repeat="upload in uploads">
          <p>{{upload.name}}</p>
-         <a ng-href='{{upload.file.path + "/" + upload.file.originalname}}'>{{upload.file.originalname}}</a>
+         <a ng-href='{{"api/" + upload.file.path + "/" + upload.file.originalname}}'>{{upload.file.originalname}}</a>
        </li>
      </ul>
     </div>

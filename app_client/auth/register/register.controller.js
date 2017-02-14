@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .controller('registerCtrl', registerCtrl);
 
   registerCtrl.$inject = ['$location', 'authentication'];

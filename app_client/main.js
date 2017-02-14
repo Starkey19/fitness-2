@@ -1,6 +1,6 @@
 (function () {
 
-  angular.module('meanApp', ['ngRoute', 'ngFileUpload']);
+  angular.module('fitness', ['ngRoute', 'ngFileUpload']);
 
   function config ($routeProvider, $locationProvider) {
     $routeProvider
@@ -54,7 +54,7 @@
   }
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .config(['$routeProvider', '$locationProvider', config])
     .run(['$rootScope', '$location', 'authentication', run]);
 

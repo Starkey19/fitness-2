@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .service('activities', activities);
 
   activities.$inject = ['$http', '$window'];

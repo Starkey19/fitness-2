@@ -1,7 +1,7 @@
 (function() {
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .service('meanData', meanData);
 
   meanData.$inject = ['$http', 'authentication'];

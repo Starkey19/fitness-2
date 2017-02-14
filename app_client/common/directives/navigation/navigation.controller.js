@@ -1,7 +1,7 @@
 (function () {
 
   angular
-    .module('meanApp')
+    .module('fitness')
     .controller('navigationCtrl', navigationCtrl);
 
   navigationCtrl.$inject = ['$location','authentication'];
