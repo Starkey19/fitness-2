@@ -1,0 +1,20 @@
+AAAF Assignment sources and useful info:
+ 
+ -Data Acess layer & mongoose:
+	http://stackoverflow.com/questions/13516538/node-js-mvc-where-to-put-data-access-code
+	https://www.mongodb.com/blog/post/building-your-first-application-mongodb-creating-rest-api-using-mean-stack-part-2
+	
+-Mean CLI used:
+	http://learn.mean.io/
+	
+-JWT storing secret in a config file
+	http://pmuellr.blogspot.co.uk/2014/09/keeping-secrets-secret.html
+	http://stackoverflow.com/questions/37972285/how-to-safely-store-process-secret-key-for-jwt
+	-Why use JWT:
+	https://ponyfoo.com/articles/json-web-tokens-vs-session-cookies
+	
+-Uploading GPX files and storing them as GeoJSON:
+	https://github.com/NukaPunk/mean-multer-ngf
+	Schema for storing geojson in mongoose:
+	https://www.npmjs.com/package/mongoose-geojson-schema
+	https://github.com/RideAmigosCorp/mongoose-geojson-schema 

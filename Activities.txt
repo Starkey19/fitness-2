@@ -1,0 +1,46 @@
+AAAF
+
+TODO: 
+	-sign-in validation : messages return empty objects??
+	-change package name 
+	-change mean-token name
+	-Sort out packages
+	-var and let?
+	-do i need to use sessions? or are JWTS good enough?
+	-It must also expose its functionality through a RESTful API that returns
+	JSON documents to clients. The RESTful API should be demonstrated using Postman or
+	a similar tool.
+	-users are able to log-off
+	-access /profile/insert profile id or unique email here - same with activities
+	-Responsive screen sizing
+	- unit testing
+	- validation of inputs - dont allow code injection
+	- test for GeoJSON using chai : https://github.com/RideAmigosCorp/mongoose-geojson-schema/blob/master/test/GeoJSON.integration.js
+Activities
+	- Allow users to access other users profiles by a rest url?
+	
+	- Can be any GeoLocation type activity, e.g RUNS, BIKE RIDES,SWIMS, HIKES
+	
+	- Users upload activities as GPX files (Which are converted in code to GeoJSON then stored in mongoDB)
+	
+	- Users can 'review' their activities (so we need to find activities based on users)
+	http://i.imgur.com/KRIQVnp.png
+	
+	- Users can Search, Sort and compare activities 
+		-- Search (search activities by user, activity name)
+		-- Sort (Sort activities by name/type, user, distance?)
+		-- compare (Compare activities of the same name/type by comparing distance? )
+	
+	- Appropriate display of activities
+		-- GPX/GeoJSON data should be formatted in UI on a map
+
+	- Activities can be 'shared' amongst users 
+		-- Have a restful URL e.g /activity/id/10320432
+		-- Display activities for a user on /profile with redirects 
+			to /activity/id/103203 when clicked
+	
+	- Comments can be writton on the /activity/id/1920910 page
+		-- Use a library for this and an angular page?
+		-- Must allow images, videos, blog links etc 
+		
+	
